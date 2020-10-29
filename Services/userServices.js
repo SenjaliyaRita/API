@@ -51,3 +51,22 @@ exports.getUserList = ()=>{
     })
 }
 
+
+
+exports.deleteUser= (id) => {
+    let index = -1
+
+    for(let i=0; i< users.length; i++) {
+      if(users[i].id === id) {
+        index = i
+        break;
+      }
+    }
+    users.splice(index, 1)
+
+    return new Promise((resolve,reject)=>{
+            resolve(users)
+            reject({msg:'User Not Deleted'})
+    })
+    
+}

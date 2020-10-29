@@ -13,4 +13,5 @@ router.post('/register',
 
 router.post('/login',UserController.login)
 router.get('/list',UserController.getUserList)
+router.post('/deleteUser',UserController.deleteUser)
 module.exports = router

@@ -32,3 +32,14 @@ exports.getUserList = (req,res)=>{
         return res.status(400).json(err)
     })
 }
+
+exports.deleteUser = (req,res)=> {
+    const { id } = req.body
+    userService.deleteUser(id)
+    .then(result=>{
+        return res.status(200).json(result)
+    })
+    .catch((err)=>{
+        return res.status(400).json(err)
+    })
+}
